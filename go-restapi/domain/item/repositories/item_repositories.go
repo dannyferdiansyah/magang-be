@@ -12,7 +12,7 @@ type dbItem struct {
 
 // Create implements ItemRepository.
 func (db *dbItem) Create(item models.Item) error {
-	return db.Conn.Create(item).Error
+	return db.Conn.Create(&item).Error
 }
 
 // Delete implements ItemRepository.

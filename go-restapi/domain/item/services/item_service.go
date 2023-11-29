@@ -34,7 +34,7 @@ func (service *itemServices) Delete(idItem int) helpers.Response {
 		response.Messages = fmt.Sprint("Failed to delete item", idItem)
 	} else {
 		response.Status = 200
-		response.Messages = "Success to create a new item"
+		response.Messages = "Success to delete item"
 	}
 	return response
 }
