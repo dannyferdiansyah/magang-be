@@ -1,0 +1,18 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+type MyWebserverType bool
+
+func (m MyWebserverType) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Hello")
+	fmt.Fprintf(w, "Request is : %+v", r)
+}
+
+func main() {
+	var k MyWebserverType
+	http.ListenAndServe("localhost:8080", k)
+}
